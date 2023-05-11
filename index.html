@@ -1,470 +1,366 @@
 <!DOCTYPE html> 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+    </style>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&display=swap');
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-</style>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&display=swap');
-</style>
 
-  <title>Kart Track</title>
-</head>
-<body>
-    <!-- ICONS -->
-    <!-- <div class="icon-container sticky"> -->
-    <!-- font awesome -->
-    <!-- <a href="#section-one"><i class="fa-solid fa-stopwatch" id="top-icon-section-one" style=""></i></a>
-    <a href="#section-two"><i class="fa-solid fa-road" id="top-icon-section-two" style=""></i></a>
-    <a href="#section-three"><i class="fa-solid fa-screwdriver-wrench" id="top-icon-section-three" style=""></i></a>
-    <a href="#section-four"><i class="fa-solid fa-gears" id="top-icon-section-four" style=""></i></a>
-    <a href="#section-five"><i class="fa-solid fa-circle-up" id="top-icon-section-five" style=""></i></a>
-    <a href="#section-six"><i class="fa-solid fa-circle-down" id="top-icon-section-six" style=""></i></a>
-    <a href="#section-seven"><i class="fa-solid fa-flag-checkered" id="top-icon-section-seven" style=""></i></a>
-    </div> -->
-
-    <!-- <div class="logo">
-      <img src="https://i.ibb.co/19yZBf0/Kart-Track-Logo.png" alt="Kart-Track-Logo" border="0">
-    </div> -->
-    <nav class="navigation-bar">
-      <ul class="list-items">
-        <span class="pointer"></span>
-        <li class="item active">
-          <a class="link" href="#section-one">
-            <i class="fa-solid fa-stopwatch fa-2x" id="top-icon-section-one" style=""></i>
-          </a>
-        </li>
-        <li class="item">
-          <a class="link" href="#section-two">
-            <i class="fa-solid fa-road fa-2x" id="top-icon-section-two" style=""></i>
-          </a>
-        </li>
-        <li class="item">
-          <a class="link" href="#section-three">
-            <i class="fa-solid fa-screwdriver-wrench fa-2x" id="top-icon-section-three" style=""></i>
-          </a>
-        </li>
-        <li class="item">
-          <a class="link" href="#section-four">
-            <i class="fa-solid fa-gears fa-2x" id="top-icon-section-four" style=""></i>
-          </a>
-        </li>
-        <li class="item">
-          <a class="link" href="#section-five">
-            <i class="fa-solid fa-circle-up fa-2x" id="top-icon-section-five" style=""></i>
-          </a>
-        </li>
-        <li class="item">
-          <a class="link" href="#section-six">
-            <i class="fa-solid fa-circle-down fa-2x" id="top-icon-section-six" style=""></i>
-          </a>
-        </li>
-        <li class="item">
-          <a class="link" href="#section-seven">
-            <i class="fa-solid fa-flag-checkered fa-2x" id="top-icon-section-seven" style=""></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-  <section>
-
-    <form autocomplete="on" name="kart-setup">
-      <!-- Tie the user profile to the database entry -->
-    <div class="section-one session-details" id="section-one">
-      <div class="section-sub-cont">
-      <h3><i class="fa-solid fa-stopwatch red-icon"></i> Session Details</h3>
-      <hr class="div-line">
-    </div>
-    <div class="container date-cont">
-      <label class="large-label">Date:</label><br>
-      <input id="date" type="date">
-    </div>
-    <div class="container date-cont">   
-      <label class="large-label">Event:</label><br>
-        <input id="event" type="text" class="input-border">
-    </div>
-    <div class="container driver-cont">
-      <label class="large-label">Driver Name:</label><br>
-        <input id="driver" type="text" class="input-border">
-    </div>
-    <div class="container session-type-cont">
-      <label class="large-label">Session:</label><br>
-      <input type="radio" name="session-type" id="practice" value="Practice">
-        <label for="practice">Practice</label>
-      <input type="radio" name="session-type" id="qualifying" value="Qualifying">
-        <label for="qualifying">Qualifying</label>
-      <input type="radio" name="session-type" id="race" value="Race">    
-        <label for="race">Race</label>
-    </div>
-    <div class="container laps-ran-cont">
-      <label class="large-label"># of Laps Ran:</label><br>
-      <select name="laps-ran" id="laps-ran">
-        <option value="--">--</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        </select>
-    </div>
-    <div class="container weather-cont">
-      <label class="large-label">Weather:</label><br>
-      <label class="weather-condition sub-label">Temperature:</label>
-      <input id="temperature" type="number"><br>
-      <div class="lil-space">
-        <label class="weather-condition sub-label">Condition:</label>
-        <input type="checkbox" id="condition-sun" value="sun">
-        <label for="condition-sun" name="condition-sun"><i class="fa-solid fa-sun weather-pics"></i></label>
-        <input type="checkbox" id="condition-cloud" value="cloud">
-        <label for="condition-cloud" name="condition-cloud"><i class="fa-solid fa-cloud weather-pics"></i></label>
-        <input type="checkbox" id="condition-rain" value="rain">
-        <label for="condition-rain" name="condition-rain"><i class="fa-solid fa-droplet weather-pics"></i></label>
-        <input type="checkbox" id="condition-wind" value="wind">
-        <label for="condition-wind" name="condition-wind"><i class="fa-solid fa-wind weather-pics"></i></label>
+    <title>Kart Track</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+    <div class="form-container" id="form-container">
+    <form name="submit-to-google-sheet" id="kart-track-form" action="">
+      <div class="img-container">
+        <img class="logo" src="https://i.ibb.co/Pr2sphb/Kart-Track-Logo.png" alt="Kart-Track-Logo" border="0" /></a>
       </div>
-      <!-- <input type="checkbox" id="current-weather" value="current-weather">
-      <label for="current-weather">Display Current NCMP Weather?</label> -->
-      <label id="weather-time" name="weather-time"></label>
-      <label id="weather-temp" name="weather-temp"></label>
-      <label id="weather-time" name="weather-time"></label>
-      <label id="weather-wind-speed" name="weather-wind-speed"></label>
-      <label id="weather-wind-direction" name="weather-wind-direction"></label>
-      <label id="weather-code" name="weather-code"></label>
-      <!-- Add a weather API? -->
-    </div>
-    <div class="container best-time-cont">
-      <label class="large-label">Best Time:</label><br>
-        <input id="best-time" type="text" class="input-border">
-    </div>
-    <!-- <div class="click-buttons click-one">
-      <a href="#section-two" class="click-next"><i class="fa-solid fa-square-caret-down"></i></a>
-    </div> -->
-    </div> <!-- End of section 1-->
-  </section>
 
-  <section>
-    <div class="section-two session-details" id="section-two">
-      <div class="section-sub-cont">
-      <h3><i class="fa-solid fa-road red-icon"></i> Track</h3>
-      <hr class="div-line">
-    </div>
-    <div class="container track-cont">
-      <label class="large-label">Track:</label><br>
-        <input id="track" type="text" class="input-border" value="">
-        <input type="checkbox" id="is-ncmp" value="ncmp">
-        <label for="is-ncmp">NCMP Layouts</label>
-    </div>
-    <div class="ncmp-layouts container" id="ncmp-layouts" hidden="true">
-      <label class="large-label">NCMP Layout #</label><br>
-      <select id="ncmp-layout-number">
-        <option value="select">-Select Layout-</option>
-        <option value="ncmp1">1 (National Layout)</option>
-        <option value="ncmp2">2 (Fast Track)</option>
-        <option value="ncmp3">3</option>
-        <option value="ncmp4">4</option>
-        <option value="ncmp5">5</option>
-        <option value="ncmp6">6</option>
-        <option value="ncmp7">7</option>
-        <option value="ncmp8">8</option>
-        <option value="ncmp9">9 (Ironman)</option>
-        <option value="ncmp10">10</option>
-      </select>
-      <br>
-      <img id="image-reveal" src=>
-    </div>
-    </div> <!-- End of section 2-->
-    <div class="container track-layout-cont" id="default-layout">
-      <label class="large-label">Track Layout:</label><br>
-        <input id="track-layout" type="text" class="input-border">
-      </div>
-      <!-- <div class="click-buttons click-two">
-        <a href="#section-one" class="click-prev"><i class="fa-solid fa-square-caret-up"></i></a><br>
-        <a href="#section-three" class="click-next"><i class="fa-solid fa-square-caret-down"></i></a>
-      </div> -->
-  </section>
-
-  <section>
-    <div class="section-three session-details" id="section-three">
-      <div class="section-sub-cont">
-      <h3><i class="fa-solid fa-screwdriver-wrench red-icon"></i> General Setup</h3>
-      <hr class="div-line">
-    </div>
+        <div class="section-container" id="section-one">
+          <div class="header-background">
+            <h1><i class="fa-solid fa-stopwatch header-icon"></i>Session Details</h1>
+          </div>
+          <div hidden="true">
+            <input type="text" id="user-id" name="user-id">
+          </div>
+          <div class="input-container-full ic1">
+            <label class="input-label" id="event-label" for="event">EVENT</label>
+            <input name="event" id="event" class="input" type="text" placeholder=" " />
+            <div class="input-container-full ic1">
+              <label class="input-label"  for="date">DATE</label>
+              <input name="date" id="date" class="input" type="date" placeholder=" " />
+             </div>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="practice" name="session-type" value="Practice">
+            <label class="radio-label" for="practice">Practice</label>
+            <input type="radio" id="qualifying" name="session-type" value="Qualifying">
+            <label class="radio-label" for="qualifying">Qualifying</label>
+            <input type="radio" id="race" name="session-type" value="Race">
+            <label class="radio-label" for="race">Race</label>
+          </div>
+          
+          <div class="input-container-full ic1">
+            <label class="input-label"  for="best-time">BEST TIME</label>
+            <input name="best-time" id="best-time" class="input" type="text" placeholder=" " />
+           </div>
+           
     
-    <div class="container baseline-cont">
-      <label class="large-label">Load Baseline Setup?</label><br>
-        <input id="load-baseline" type="checkbox">
-        <label for="load-baseline"><i class="fa-solid fa-thumbs-up weather-pics"></i></label>
-        
-    </div>
-    <div class="container kart-model-cont">
-      <label class="large-label">Kart Model:</label><br>
-    <div class="kart-model-datalist">
-      <input id="kart-model" type="text" class="input-border" list="kart-model-list">
-      <datalist id="kart-model-list">
-        <option value="BirelART AM29">BirelART AM29</option>
-        <option value="Comet Eagle">Comet Eagle</option>
-        <option value="Margay Brava">Margay Brava</option>
-        <option value="Margay Ignite">Margay Ignite</option>
-        <option value="MGM Espionage">MGM Espionage</option>
-        <option value="OTK STV450">OTK STV450 (Tony Kart, Kosmic, EOS, Red Speed)</option>
-        <option value="OTK 401R">OTK 401R (Tony Kart, Kosmic, EOS, Red Speed)</option>
-        <option value="Top Kart">Top Kart</option>
-        <option value="VLR">VLR</option>
-      </datalist>
-    </div>
-    </div>
-    <div class="container kart-weight-cont">
-      <label class="large-label">Kart Weight:</label><br>
-        <input id="kart-weight" type="number">
-    </div>
-    <div class="container wheel-type-cont">
-      <label class="large-label">Wheel Type:</label><br>
-        <input id="wheel-type" type="text" class="input-border">
-    </div>
-    <div class="container tire-compound-cont">
-      <label class="large-label">Tire Compound:</label><br>
-        <select id="tire-compound">
-          <option value="--">--</option>  
-          <option value="MG Red">MG Red</option>
-          <option value="Vega Red">Vega Red</option>
-          <option value="Hoosier R60B">Hoosier R60B</option>
-        </select>
-    </div>
-    <div class="container tire-pressure-overall-cont">
-      <label class="large-label">Tire Pressure:</label><br>
-    <div class="container same-pressure-cont">
-      <div class="container same-pressure-inner-cont">
-        <input type="radio" class="tire-pressure" name="tire-pressure" id="same-pressure" value="same-pressure"> 
-        <label for="same-pressure">Input Same PSI For All Tires</label>
+          <div class="two-element-container" id="weather-container">
+            <div class="input-container-short">
+              <h3 class="weather-label">Weather</h3>
+            </div>
+            <div class="toggle-container-short" id="weather-toggle">
+              <label class="label">
+                <div class="toggle">
+                  <input class="toggle-state" type="checkbox" name="auto-weather" id="auto-weather" value="yes" />
+                  <div class="toggle-inner">
+                    <div class="indicator"></div>
+                  </div>
+                  <div class="active-bg"></div>
+                </div>
+                <div class="label-text">Auto</div>
+              </label>
+            </div>
+          </div>
+          <div id="default-weather">
+            <div class="input-container-full ic1">
+              <label class="input-label"  for="temperature">TEMPERATURE</label>
+              <input name="temperature" id="temperature" type="number" class="input" placeholder=" " />
+            </div>
+          </div>
+          <div class="auto-weather-reveal container" id="auto-weather-reveal" hidden="true">
+              <h2 name="live-weather" id="live-weather-temp"></h2>
+              <h2 name="live-weather-windspeed" id="live-weather-windspeed"></h2>
+              <h2 name="live-weather-wind-direction" id="live-weather-wind-direction"></h2>
+              <div class="hidden-weather-db" hidden="true">
+                <input type="text" name="weather-temperature" id="live-weather-temp-db" hidden="true">
+                <input type="text" name="weather-windspeed" id="live-weather-windspeed-db" hidden="true">
+                <input type="text" name="weather-wind-direction" id="live-weather-wind-db" hidden="true">
+              </div>
+          </div>
+          <div class="input-container-full ic1">
+            <label class="input-label-radio" for="conditions">CONDITIONS</label>
+              <div class="checkbox-group">
+                <input type="checkbox" name="weather-condition-sun" id="condition-sun" value="yes">
+                <label for="condition-sun"><i class="fa-solid fa-sun weather-pics"></i></label>
+                <input type="checkbox" name="weather-condition-cloud" id="condition-cloud" value="yes">
+                <label for="condition-cloud"><i class="fa-solid fa-cloud weather-pics"></i></label>
+                <input type="checkbox" name="weather-condition-rain" id="condition-rain" value="yes">
+                <label for="condition-rain"><i class="fa-solid fa-droplet weather-pics"></i></label>
+                <input type="checkbox" name="weather-condition-wind" id="condition-wind" value="yes">
+                <label for="condition-wind"><i class="fa-solid fa-wind weather-pics"></i></label>
+              </div>
+            </div>
+        <div class="section-container" id="section-two">
+          <div class="header-background">
+            <h1><i class="fa-solid fa-road header-icon"></i>Track Details</h1>
+          </div>
+          <div class="two-element-container" id="margin-reduce">
+          <div class="input-container-short ic1">
+            <label class="input-label"  for="track">Track</label>
+            <input name="track" id="track" type="text" value="" class="input" placeholder=" " />
+            </div>
+            <div class="toggle-container-short">
+              <label class="label">
+                <div class="toggle">
+                  <input class="toggle-state" type="checkbox" name="is-ncmp" id="is-ncmp" value="yes" />
+                  <div class="toggle-inner">
+                    <div class="indicator"></div>
+                  </div>
+                  <div class="active-bg"></div>
+                </div>
+                <div class="label-text">NCMP</div>
+               </label>
+              </div>
+             </div>
+             <div class="ncmp-layouts container" id="ncmp-layouts" hidden="true">
+                <select class="select-list" name="ncmp-layout-number" id="ncmp-layout-number">
+                  <option value="select">-Select NCMP Layout-</option>
+                  <option value="ncmp1">1 (National Layout)</option>
+                  <option value="ncmp2">2 (Fast Track)</option>
+                  <option value="ncmp3">3</option>
+                  <option value="ncmp4">4</option>
+                  <option value="ncmp5">5</option>
+                  <option value="ncmp6">6</option>
+                  <option value="ncmp7">7</option>
+                  <option value="ncmp8">8</option>
+                  <option value="ncmp9">9 (Ironman)</option>
+                  <option value="ncmp10">10</option>
+                </select>
+                <br>
+                <img id="image-reveal" src=>
+              </div>
+              <div class="input-container-full ic1" id="default-layout">
+                <label class="input-label"  for="other-track-layout">Track Layout</label>
+                <input name="other-track-layout" id="other-track-layout" type="text" class="input" placeholder=" " />
+              </div>
+        </div>
+        <div class="section-container" id="section-three">
+          <div class="header-background">
+          <h1><i class="fa-solid fa-screwdriver-wrench header-icon"></i>General Setup</h1>
+          </div>
+          <div class="input-container-full ic1">
+              <label class="input-label"  for="kart-model">Kart Model</label>
+              <input name="kart-model" id="kart-model" class="input" type="text" list="kart-model-list" placeholder=" " />
+              <datalist id="kart-model-list">
+                <option value="BirelART AM29">BirelART AM29</option>
+                <option value="Comet Eagle">Comet Eagle</option>
+                <option value="Margay Brava">Margay Brava</option>
+                <option value="Margay Ignite">Margay Ignite</option>
+                <option value="MGM Espionage">MGM Espionage</option>
+                <option value="OTK STV450">OTK STV450 (Tony Kart, Kosmic, EOS, Red Speed)</option>
+                <option value="OTK 401R">OTK 401R (Tony Kart, Kosmic, EOS, Red Speed)</option>
+                <option value="Top Kart">Top Kart</option>
+                <option value="VLR">VLR</option>
+              </datalist>
+            </div>
+            <div class="input-container-full ic1">
+              <label class="input-label"  for="kart-weight">Kart Weight</label>
+              <input name="kart-weight" id="kart-weight" type="number" class="input" placeholder=" " />
+            </div>
+            <div class="input-container-full ic1">
+              <label class="input-label"  for="wheel-type">Wheel Type</label>
+              <input name="wheel-type" id="wheel-type" type="text" class="input" placeholder=" " />
+            </div>
+            <div>
+              <label class="input-label"  for="kart-model">Tire Compound</label>
+                <input name="tire-compound" id="tire-compound" class="input" type="text" list="tire-compound-list" placeholder=" " />
+                <datalist id="tire-compound-list">
+                  <option value="MG Red">MG Red</option>
+                  <option value="Vega Red">Vega Red</option>
+                  <option value="Hoosier R60B">Hoosier R60B</option>
+                </datalist>
+            </div>
+            <div class="two-element-container">
+              <div class="input-container-short ic1" id="same-pressure-input-reveal">
+                <label class="input-label"  for="same-tire-pressure" id="tire-pressure-label">Tire Pressure</label>
+                <input name="same-tire-pressure" id="same-tire-pressure" type="number" value="" class="input" placeholder=" " />
+              </div>
+              <div class="toggle-container-short pressure-toggle">
+                <label class="label">
+                  <div class="toggle">
+                    <input class="toggle-state" type="checkbox" name="individual-pressure-toggle" id="individual-pressure-toggle" value="check" />
+                      <div class="toggle-inner">
+                        <div class="indicator"></div>
+                      </div>
+                      <div class="active-bg"></div>
+                  </div>
+                  <div class="label-text">Indiv</div>
+                </label>
+              </div>
+            </div>
+                <div class="tire-pressure-all-cont container" id="same-pressure-reveal" hidden="true">
+                  <label class="input-label"  for="all-tire-pressure">All Tires:</label>
+                  <input name="all-tire-pressure" id="all-tire-pressure" type="number" step="0.5" min="7" placeholder="Enter PSI">
+                </div>
+              <div id="individual-pressure-reveal" hidden="true">
+              <div class="two-input-container">
+                <div class="input-container half-container left-cont ic1">
+                  <label for="lf-pressure">LF</label>
+                  <input name="lf-pressure" id="lf-pressure" type="number" value="" step="0.5" min="7" class="input" placeholder=" " />
+                </div>
+                <div class="input-container half-container right-cont ic1">
+                  <label for="rf-pressure">RF</label>
+                  <input name="rf-pressure" id="rf-pressure" type="number" value="" step="0.5" min="7" class="input" placeholder=" " />
+                </div>
+              </div>
+              <div class="two-input-container">
+                <div class="input-container half-container left-cont ic1">
+                  <label for="lr-pressure">LR</label>
+                  <input name="lr-pressure" id="lr-pressure" type="number" value="" step="0.5" min="7" class="input" placeholder=" " />
+                </div>
+                <div class="input-container half-container right-cont ic1">
+                  <label for="rr-pressure">RR</label>
+                  <input name="rr-pressure" id="rr-pressure" type="number" value="" step="0.5" min="7" class="input" placeholder=" " />
+                </div>
+              </div>
+              </div>
+        </div>
+        <div class="section-container" id="section-four">
+          <div class="header-background">
+          <h1><i class="fa-solid fa-gears header-icon"></i>Gear</h1>
+          </div>
+      <div class="input-container-full ic1">
+        <label class="input-label"  for="drive-sprocket">Clutch Drive Sprocket</label>
+        <input name="drive-sprocket" id="drive-sprocket" type="number" class="input" placeholder=" " />
       </div>
-      <div class="tire-pressure-all-cont container" id="same-pressure-reveal" hidden="true">
-        <label for="all-tire-pressure">All Tires:</label>
-          <input id="all-tire-pressure" type="number" step="0.5" min="7" placeholder="Enter PSI">
+      <div class="input-container-full ic1">
+        <label class="input-label"  for="rear-sprocket">Rear Sprocket</label>
+        <input name="rear-sprocket" id="rear-sprocket" type="number" class="input" placeholder=" " />
       </div>
-  </div> 
-    <div class="container individual-pressure-cont">
-      <input type="radio" class="tire-pressure" name="tire-pressure" id="individual-pressure" value="individual-pressure"> 
-      <label for="individual-pressure">Input For Each Tire</label>
-    </div>
-    <div class="container individual-pressure-inner-cont  indv-inner-container" id="individual-pressure-reveal" hidden="true">
-      <table class="indv-tire-table">
-        <colgroup>
-          <col style="">
-          <col style="">
-        </colgroup>
-        <tr>
-          <td><label class="sub-label" for="lf-pressure">LF:</label></td>
-          <td class="table-input"><input class="pressure-input-table" id="lf-pressure" type="number" step="0.5" min="7" placeholder="Enter PSI"></td>
-          <td><label class="pressure-right sub-label" for="rf-pressure">RF:</label></td>
-          <td class="table-input"><input class="pressure-input-table" id="rf-pressure" type="number" step="0.5" min="7" placeholder="Enter PSI"></td>
-        </tr>
-        <tr>
-          <td><label class="sub-label" for="lr-pressure">LR:</label></td>
-          <td class="table-input"><input class="pressure-input-table" id="lr-pressure" type="number" step="0.5" min="7" placeholder="Enter PSI"></td>
-          <td><label class="pressure-right sub-label" for="rr-pressure">RR:</label></td>
-          <td class="table-input"><input class="pressure-input-table" id="rr-pressure" type="number" step="0.5" min="7" placeholder="Enter PSI"></td>
-        </tr>
-      </table>
-    </div> 
-
-  </div> 
-    <!-- <div class="click-buttons click-three">
-      <a href="#section-two" class="click-prev"><i class="fa-solid fa-square-caret-up"></i></a><br>
-      <a href="#section-four" class="click-next"><i class="fa-solid fa-square-caret-down"></i></a>
-    </div> -->
-  </section>
-  
-
-  <section>
-    <div class="section-four session-details" id="section-four">
-      <div class="section-sub-cont">
-      <h3><i class="fa-solid fa-gears red-icon"></i> Gearing</h3>
-      <hr class="div-line">
-    </div>
+      <div class="two-input-container">
+          <h2>Gear Ratio:</h2>
+          <h2 name="gear-ratio" id="gear-ratio"></h2>
+          <input type="text" name="gear-ratio-db" id="gear-ratio-db" hidden="true">
+      </div>
+        </div>
+        <div class="section-container" id="section-five">
+          <div class="header-background">
+          <h1><i class="fa-solid fa-circle-up header-icon"></i>Front Setup</h1>
+        </div>
+      <div class="input-container-full ic1">
+        <label class="input-label"  for="toe-setting">Toe Setting</label>
+        <input name="toe-setting" id="toe-setting" type="number" class="input" placeholder=" " />
+      </div>
+      <div class="input-container-full ic1">
+        <label class="input-label"  for="camber-setting">Camber Setting</label>
+        <input name="camber-setting" id="camber-setting" type="number" class="input" placeholder=" " />
+      </div>
+      <div class="radio-group-label">
+        <h4>Caster Setting</h4>
+      </div>
+      <div class="radio-group">
+        <input type="radio" name="steering-setting" id="caster-max" value="Maximum">
+        <label class="radio-label" for="caster-max">Maximum</label>
+        <input type="radio" name="steering-setting" id="caster-middle" value="Middle">
+        <label class="radio-label" for="caster-middle">Middle</label>
+        <input type="radio" name="steering-setting" id="caster-min" value="Minimum">
+        <label class="radio-label" for="caster-min">Minimum</label>
+      </div>
+      <div class="radio-group-label">
+        <h4>Steering Column Hole</h4>
+      </div>
+      <div class="radio-group">
+        <input type="radio" name="steering-hole" id="steering-top" value="Top"><label class="radio-label" for="steering-top">Top</label><input type="radio" name="steering-hole" id="steering-mid" value="Middle"><label class="radio-label" for="steering-mid">Middle</label><input type="radio" name="steering-hole" id="steering-low" value="Bottom"><label class="radio-label" for="steering-low">Bottom</label>
+      </div>
+      <div class="radio-group-label">
+        <h4>Spindle Hole</h4>
+      </div>
+      <div class="radio-group">
+        <input type="radio" name="spindle-hole" id="spindle-inside" value="Inside"><label class="radio-label" for="spindle-inside">Inside</label><input type="radio" name="spindle-hole" id="spindle-outside" value="Outside"><label class="radio-label" for="spindle-outside">Outside</label>
+      </div>
+        <label class="input-label"  for="front-bar">Front Torsion Bar</label>
+        <input name="front-bar" id="front-bar" class="input" type="text" list="front-bar-list" placeholder=" " />
+        <datalist id="front-bar-list">
+          <option value="None">None</option>
+          <option value="Freeline Chrome">Freeline Chrome (Medium)</option>
+          <option value="Freeline Plastic">Freeline Plastic (Soft)</option>
+          <option value="Freeline Black">Freeline Black (Hard)</option>
+          <option value="OTK Oval">OTK Oval</option>
+          <option value="OTK Chromed">OTK Chromed (Soft)</option>
+          <option value="OTK Silver">OTK Silver (Medium)</option>
+          <option value="OTK Gold">OTK Gold (Hard)</option>
+        </datalist>
+        </div>
+        <div class="section-container" id="section-six">
+          <div class="header-background">
+          <h1><i class="fa-solid fa-circle-down header-icon"></i>Rear Setup</h1>
+          </div>
+          <div class="input-container-full ic1">
+            <label class="input-label"  for="axle">Axle</label>
+            <input name="axle" id="axle" type="text" class="input" placeholder=" " />
+          </div>
+          <div class="input-container-full ic1">
+            <label class="input-label"  for="rear-width">Rear Width</label>
+            <input name="rear-width" id="rear-width" type="number" step="0.25" min="46" max="55" class="input" placeholder=" " />
+          </div>
+          <div class="input-container-full ic1">
+            <label class="input-label"  for="rear-hub">Rear Hub Used</label>
+            <input name="rear-hub" id="rear-hub" type="text" class="input" placeholder=" " />
+          </div>
+          <div class="radio-group-label">
+            <h4>Rear Ride Height</h4>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="rear-ride-height" id="rear-high" value="High"><label class="radio-label" for="rear-high">High</label>
+            <input type="radio" name="rear-ride-height" id="rear-mid" value="Middle"><label class="radio-label" for="rear-mid">Middle</label>
+            <input type="radio" name="rear-ride-height" id="rear-low" value="Low"><label class="radio-label" for="rear-low">Low</label>
+          </div>
+          <div class="radio-group-label">
+            <h4>Wheelbase Setting</h4>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="wheelbase" id="wheelbase-none" value="N/A"><label class="radio-label" for="wheelbase-none">N/A</label>
+            <input type="radio" name="wheelbase" id="wheelbase-short" value="Short"><label class="radio-label" for="wheelbase-short">Short</label>
+            <input type="radio" name="wheelbase" id="wheelbase-mid" value="Middle"><label class="radio-label" for="wheelbase-mid">Middle</label>
+            <input type="radio" name="wheelbase" id="wheelbase-long" value="Long"><label class="radio-label" for="wheelbase-long">Long</label>
+          </div>
+          <div class="radio-group-label">
+            <h4>Seat Struts</h4>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="seat-struts" id="seat-struts-yes" value="Yes"><label class="radio-label" for="seat-struts-yes">Yes</label>
+            <input type="radio" name="seat-struts" id="seat-struts-no" value="No"><label class="radio-label" for="seat-struts-no">No</label>
+          </div>
+        </div>
+        <div class="section-container" id="section-seven">
+          <div class="header-background">
+          <h1><i class="fa-solid fa-clipboard-list header-icon"></i>Feedback</h1>
+          </div>
+          <div class="radio-group-label">
+          <h4>How Was It?</h4>
+          </div>
+          <div class="radio-group">
+            <input type="radio" name="simple-feedback" id="simple-feedback-thumbs-up" value="Thumbs Up"><label class="radio-label" for="simple-feedback-thumbs-up"><i class="fa-solid fa-thumbs-down fa-rotate-180"></i></label>
+            <input type="radio" name="simple-feedback" id="simple-feedback-thumbs-down" value="Thumbs Down"><label class="radio-label" for="simple-feedback-thumbs-down"><i class="fa-solid fa-thumbs-down"></i></label>
+          </div>
+          <div class="notes-container ic1">
+            <textarea class="notes" name="notes" id="notes" placeholder="Enter your feedback / notes here" rows="10" cols="33"></textarea>
+          </div>
+          <input type="submit" value="Submit">
+        </div>
     
-    <div class="container clutch-drive-cont">
-      <label class="large-label">Clutch Drive Sprocket:</label><br>
-        <input id="drive-sprocket" type="number">
-    </div> 
-    <div class="container rear-sprocket-cont">
-      <label class="large-label">Rear Sprocket:</label><br>
-        <input id="rear-sprocket" type="number">
-    </div>
-    <div class="container gear-ratio-cont">
-      <label class="large-label">Gear Ratio:</label><br>
-      <label id="gear-ratio"></label>
-    </div>
-    <!-- <div class="click-buttons click-four">
-      <a href="#section-three" class="click-prev"><i class="fa-solid fa-square-caret-up"></i></a><br>
-      <a href="#section-five" class="click-next"><i class="fa-solid fa-square-caret-down"></i></a>
-    </div> -->
-  </section>
-
-  <section>
-      <div class="section-five session-details" id="section-five">
-    <div class="section-sub-cont">
-    <h3><i class="fa-solid fa-circle-up red-icon"></i> Front Setup</h3>
-    <hr class="div-line">
+    </form>
   </div>
-  
-  <div class="container front-ride-height-cont">
-    <label class="large-label">Front Ride Height:</label><br>
-    <input type="radio" name="front-ride-height" id="front-high" value="High">
-    <label for="front-high">High</label>
-    <input type="radio" name="front-ride-height" id="front-mid" value="Mid">  
-    <label for="front-mid">Middle</label>
-    <input type="radio" name="front-ride-height" id="front-low" value="Low">  
-    <label for="front-low">Low</label>
   </div>
-  <div class="container front-spacers-cont">
-    <label class="large-label">Front Width:</label><br>
-      <input id="front-spacers" type="number">
-  </div>  
-  <div class="container steering-column-cont">
-    <label class="large-label">Steering Column Hole:</label><br>
-      <input type="radio" name="steering-hole" id="steering-top" value="Top">
-      <label for="steering-top">Top</label>
-      <input type="radio" name="steering-hole" id="steering-mid" value="Mid">  
-      <label for="steering-mid">Middle</label>
-      <input type="radio" name="steering-hole" id="steering-low" value="Low"> 
-      <label for="steering-low">Low</label>
-  </div>  
-  <div class="container spindle-hole-cont"> 
-    <label class="large-label">Spindle Hole:</label><br>
-      <input type="radio" name="spindle-hole" id="spindle-inside" value="Inside">
-      <label for="spindle-inside">Inside</label>
-      <input type="radio" name="spindle-hole" id="spindle-outside" value="Outside"> 
-      <label for="spindle-outside">Outside</label>
-  </div> 
-  <div class="container toe-cont">
-      <label class="large-label">Toe Setting:</label><br>
-      <input id="toe-setting" type="number">
-  </div>
-  <div class="container camber-cont">
-    <label class="large-label">Camber Setting:</label><br>
-      <input id="camber-setting" type="number">
-  </div>
-  <div class="container caster-cont">
-    <label class="large-label">Caster Setting:</label><br>
-      <input id="caster-setting" type="number">
-  </div>
-  <div class="container torsion-bar-cont">
-    <label class="large-label">Front Torsion Bar:</label><br>
-    <select name="front-bar" id="front-bar">
-      <option value="--">--</option>
-      <option value="Freeline Chrome">Freeline Chrome (Medium)</option>
-      <option value="Freeline Plastic">Freeline Plastic (Soft)</option>
-      <option value="Freeline Black">Freeline Black (Hard)</option>
-      <option value="OTK Oval">OTK Oval</option>
-      <option value="OTK Chromed">OTK Chromed (Soft)</option>
-      <option value="OTK Silver">OTK Silver (Medium)</option>
-      <option value="OTK Gold">OTK Gold (Hard)</option>
-    </select>
-  </div>
-  <!-- <div class="click-buttons click-five">
-    <a href="#section-four" class="click-prev"><i class="fa-solid fa-square-caret-up"></i></a><br>
-    <a href="#section-six" class="click-next"><i class="fa-solid fa-square-caret-down"></i></a>
-  </div> -->
-  </section>
-
-  <section>
-    <div class="section-six session-details" id="section-six">
-      <div class="section-sub-cont">
-      <h3><i class="fa-solid fa-circle-down red-icon"></i> Rear Setup</h3>
-      <hr class="div-line">
-    </div>
-    <div class="container axle-cont">
-      <label class="large-label">Axle:</label><br>
-        <input id="axle" type="text" class="input-border">
-    </div>
-    <div class="container rear-ride-height-cont">
-      <label class="large-label">Rear Ride Height Setting:</label><br>
-      <input type="radio" name="rear-ride-height" id="rear-high" value="High">
-      <label for="rear-high">High</label>
-      <input type="radio" name="rear-ride-height" id="rear-mid" value="Mid">  
-      <label for="rear-mid">Middle</label>
-      <input type="radio" name="rear-ride-height" id="rear-low" value="Low">  
-      <label for="rear-low">Low</label>
-    </div>    
-    <div class="container wheelbase-cont">
-      <label class="large-label">Wheelbase Setting:</label><br>
-      <input type="radio" name="wheelbase" id="wheelbase-none" value="N/A">
-        <label for="wheelbase-none">N/A</label>
-        <input type="radio" name="wheelbase" id="wheelbase-short" value="Short">
-        <label for="wheelbase-short">Short</label>
-        <input type="radio" name="wheelbase" id="wheelbase-mid" value="Mid">  
-        <label for="wheelbase-mid">Mid</label>
-        <input type="radio" name="wheelbase" id="wheelbase-long" value="Long">  
-        <label for="wheelbase-long">Long</label>
-    </div>  
-    <div class="container rear-hub-cont">   
-      <label class="large-label">Rear Hub Used:</label><br>
-        <input id="rear-hub" type="text" class="input-border">
-    </div> 
-    <div class="container rear-width-cont">
-      <label class="large-label">Rear Width:</label><br>
-        <input id="rear-width" type="number">
-    </div>
-    <div class="container seat-struts-cont">
-      <label class="large-label">Seat Struts Used:</label><br>
-        <input type="radio" name="seat-struts" id="seat-struts-yes" value="Yes">
-        <label for="seat-struts-yes">Yes</label>
-        <input type="radio" name="seat-struts" id="seat-struts-no" value="No">  
-        <label for="seat-struts-no">No</label>
-    </div> 
-    <!-- <div class="click-buttons click-six">
-      <a href="#section-five" class="click-prev"><i class="fa-solid fa-square-caret-up"></i></a><br>
-      <a href="#section-seven" class="click-next"><i class="fa-solid fa-square-caret-down"></i></a>
-    </div> -->
-</section>
-
-<section>
-  <div class="section-seven session-details" id="section-seven">
-    <div class="section-sub-cont">
-    <h3><i class="fa-solid fa-flag-checkered red-icon"></i> Submit</h3>
-    <hr class="div-line">
-  </div> 
-  <div class="container notes-cont">   
-    <label class="large-label" for="notes">Notes:</label><br>
-      <textarea class="notes" name="notes" id="notes" placeholder="Enter your feedback / notes here" rows="10" cols="33"></textarea>
-  </div>
-<!-- <i class="fa-solid fa-flag-checkered"></i> -->
-<input type="submit" class="submit" value="SUBMIT"> 
-</form>
-<!-- <div class="click-buttons click-seven">
-  <a href="#section-six" class="click-prev"><i class="fa-solid fa-square-caret-up"></i></a><br>
-</div> -->
-</div>
-</section>
-  <script src="https://kit.fontawesome.com/a8027ef181.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="script.js"></script>
-</body>
+    
+    <script src="https://kit.fontawesome.com/a8027ef181.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNBmAlN847-ZUXvvG5PU55SEV3foa01n4&libraries=places"></script>
+  </body>
 </html>

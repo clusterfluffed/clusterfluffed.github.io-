@@ -1,21 +1,3 @@
-//Tire Pressure - first event listener
-document.querySelector('#same-pressure').addEventListener("click", () => {
-
-    if(document.getElementById('same-pressure').checked===true) {
-        document.getElementById('same-pressure-reveal').hidden = false;
-        document.getElementById('individual-pressure-reveal').hidden = true;
-    }
-});
-
-//Tire Pressure - second event listener
-document.querySelector('#individual-pressure').addEventListener("click", () => {
-
-    if(document.getElementById('individual-pressure').checked===true) {
-        document.getElementById('individual-pressure-reveal').hidden = false;
-        document.getElementById('same-pressure-reveal').hidden = true;
-    }
-});
-
 // if checked, then populate track input with 'NCMP'. If unchecked, then remove 'NCMP'
 // if checked make default track layout field hidden = true
 // if checked, then changed reveal div hidden to false. if unchecked then hidden = true
@@ -64,17 +46,31 @@ document.querySelector('#ncmp-layouts').addEventListener("change", () => {
     }
     });
 
+// V2 of Tire Pressure based on toggle
+document.querySelector('#individual-pressure-toggle').addEventListener("click", () => {
+
+    if(document.getElementById('individual-pressure-toggle').checked===true) {
+        document.getElementById('individual-pressure-reveal').hidden = false;
+        document.getElementById('same-tire-pressure').disabled = true;
+    } else {
+        document.getElementById('individual-pressure-reveal').hidden = true;
+        document.getElementById('same-tire-pressure').disabled = false;
+    }
+});
+
 // const driveSprocket = document.querySelector('#driver-sprocket');
 const rearSprocket = document.querySelector('#rear-sprocket');
 let calcDriveSprocket = 0;
 let calcRearSprocket = 0;
 let ratio = document.getElementById('gear-ratio');
+let ratioDb = document.getElementById('gear-ratio-db');
 
 document.querySelector('#drive-sprocket').addEventListener("change", () => {
     calcDriveSprocket = document.querySelector('#drive-sprocket').value;
     console.log(calcDriveSprocket);
     if (calcDriveSprocket !== 0 && calcRearSprocket !== 0) {
-        ratio.textContent = Math.round((calcRearSprocket / calcDriveSprocket + Number.EPSILON) * 100) / 100;
+        ratio.innerHTML = Math.round((calcRearSprocket / calcDriveSprocket + Number.EPSILON) * 100) / 100;
+        ratioDb.value = Math.round((calcRearSprocket / calcDriveSprocket + Number.EPSILON) * 100) / 100;
     }
 })
 
@@ -82,117 +78,11 @@ document.querySelector('#rear-sprocket').addEventListener("change", () => {
     calcRearSprocket = document.querySelector('#rear-sprocket').value;
     console.log(calcRearSprocket);
     if (calcDriveSprocket !== 0 && calcRearSprocket !== 0) {
-        ratio.textContent = Math.round((calcRearSprocket / calcDriveSprocket + Number.EPSILON) * 100) / 100;
+        ratio.innerHTML = Math.round((calcRearSprocket / calcDriveSprocket + Number.EPSILON) * 100) / 100;
+        ratioDb.value = Math.round((calcRearSprocket / calcDriveSprocket + Number.EPSILON) * 100) / 100;
     }
 })
 
-
-// Weather API
-async function weather() { //superHeroes
-
-    const requestURL = 'https://api.open-meteo.com/v1/forecast?latitude=39.84&longitude=-85.44&hourly=temperature-2m,precipitation,weathercode,cloudcover,windspeed-10m,winddirection-10m&current-weather=true&temperature-unit=fahrenheit&windspeed-unit=mph&precipitation-unit=inch&&timezone=auto';
-    const request = new Request(requestURL);
-  
-    const response = await fetch(request);
-    const currentWeather = await response.json(); // superHeroes
-  
-    populateTime(currentWeather); // populateHeader (superHeroes)
-    // populateTemp(currentWeather); //populateHeroes (superHeroes)
-    // populateWindSpeed(currentWeather); 
-    // populateWindDirection(currentWeather); 
-    // populateWeatherCode(currentWeather); 
-  }
-
-  function populateTime(obj) {
-    const weatherTime = document.getElementByID('weather-time');
-    weatherTime.textContent = obj.current-weather.time;
-    console.log(weatherTime);
-  }
-
-  // Highlight Top Icons When Section is within viewport - Section 1
-  const topIconColorOne = document.getElementById('top-icon-section-one');
-  const topIconColorTwo = document.getElementById('top-icon-section-two');
-  const topIconColorThree = document.getElementById('top-icon-section-three');
-  const topIconColorFour = document.getElementById('top-icon-section-four');
-  const topIconColorFive = document.getElementById('top-icon-section-five');
-  const topIconColorSix = document.getElementById('top-icon-section-six');
-  const topIconColorSeven = document.getElementById('top-icon-section-seven');
-
-  let observerOne = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true) {
-        topIconColorOne.setAttribute('style', 'color: #F02D3A')
-    } else {
-        topIconColorOne.setAttribute('style', '')
-    }
-}, { threshold: [0.5] });
-
-observerOne.observe(document.querySelector("#section-one"));
-
-// Highlight Top Icons - Section 2
-let observerTwo = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true) {
-        topIconColorTwo.setAttribute('style', 'color: #F02D3A');
-    } else {
-        topIconColorTwo.setAttribute('style', '');
-    }
-}, { threshold: [0.5] });
-
-observerTwo.observe(document.querySelector("#section-two"));
-
-// Highlight Top Icons - Section 3
-let observerThree = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true) {
-        topIconColorThree.setAttribute('style', 'color: #F02D3A');
-    } else {
-        topIconColorThree.setAttribute('style', '');
-    }
-}, { threshold: [0.5] });
-
-observerThree.observe(document.querySelector("#section-three"));
-
-// Highlight Top Icons - Section 4
-let observerFour = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true) {
-        topIconColorFour.setAttribute('style', 'color: #F02D3A');
-    } else {
-        topIconColorFour.setAttribute('style', '');
-    }
-}, { threshold: [0.5] });
-
-observerFour.observe(document.querySelector("#section-four"));
-
-// Highlight Top Icons - Section 5
-let observerFive = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true) {
-        topIconColorFive.setAttribute('style', 'color: #F02D3A');
-    } else {
-        topIconColorFive.setAttribute('style', '');
-    }
-}, { threshold: [0.5] });
-
-observerFive.observe(document.querySelector("#section-five"));
-
-// Highlight Top Icons - Section 6
-let observerSix = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true) {
-        topIconColorSix.setAttribute('style', 'color: #F02D3A');
-    } else {
-        topIconColorSix.setAttribute('style', '');
-    }
-}, { threshold: [0.5] });
-
-observerSix.observe(document.querySelector("#section-six"));
-
-// Highlight Top Icons - Section 7
-let observerSeven = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true) {
-        topIconColorSeven.setAttribute('style', 'color: #F02D3A');
-    } else {
-        topIconColorSeven.setAttribute('style', '');
-    }
-}, { threshold: [0.5] });
-
-observerSeven.observe(document.querySelector("#section-seven"));
 
 
 // Change the input border to blue when the input value is not empty
@@ -204,3 +94,143 @@ observerSeven.observe(document.querySelector("#section-seven"));
 //         inputBorderSelector.setAttribute('class', 'input-border blue-border');
 //     }  
 // });
+
+// form submit to Google Sheets
+// const scriptURL = 'https://script.google.com/macros/s/AKfycbwzDabdzOSsANLmudRpiaQH4C8bBGzKGNmdPb6claXvAdSroK-1ZjQARxNNsiYD8Dxd/exec'
+// const form = document.forms['submit-to-google-sheet']
+
+// form.addEventListener('submit', e => {
+//   e.preventDefault()
+//   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//     .then(response => console.log('Success!', response))
+//     .catch(error => console.error('Error!', error.message))
+// })
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwzDabdzOSsANLmudRpiaQH4C8bBGzKGNmdPb6claXvAdSroK-1ZjQARxNNsiYD8Dxd/exec'
+const form = document.forms['submit-to-google-sheet']
+
+form.addEventListener('submit', e => {
+//   e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => alert('Your data has been submitted!', response))
+    .catch(error => alert('Sorry, an error has occured!', error.message))
+    document.getElementById("kart-track-form").reset();
+})
+
+
+
+//location and weather API
+document.querySelector('#auto-weather').addEventListener("click", () => {
+    let lat = 0;
+    let latitude = '';
+    let long = 0;
+    let longitude = '';
+    let weatherOutputTemp = document.getElementById('live-weather-temp');
+    let weatherOutputWindSpeed = document.getElementById('live-weather-windspeed');
+    let weatherOutputWindDirection = document.getElementById('live-weather-wind-direction');
+    let weatherOutputTempDb = document.getElementById('live-weather-temp-db');
+    let weatherOutputWindSpeedDb = document.getElementById('live-weather-windspeed-db');
+    let weatherOutputWindDirectionDb = document.getElementById('live-weather-wind-db');
+
+    if(document.getElementById('auto-weather').checked===true) {
+        document.getElementById('auto-weather-reveal').hidden = false;
+        document.getElementById('default-weather').hidden = true;
+        (function () {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                lat = position.coords.latitude
+                latitude = lat.toFixed(2);
+                long = position.coords.longitude
+                longitude = long.toFixed(2);
+                console.log('lat', latitude);
+                console.log('long', longitude);
+                fetch(`https://api.open-meteo.com/v1/gfs?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch`)
+                    // Handle success
+                    .then(response => response.json())  // convert to json
+                    .then(json => console.log(json.current_weather.temperature))    //print data to console
+                    .catch(err => console.log('Request Failed', err)); // Catch errors
+                // fetch(`https://api.open-meteo.com/v1/gfs?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch`)
+                //     .then(response => response.text())
+                //     .then(data => console.log(data));
+                fetch(`https://api.open-meteo.com/v1/gfs?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch`)
+                    .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error, status = ${response.status}`);
+                    }
+                    return response.json();
+                    })
+                    .then((data) => {
+                        const weatherResponseTemp = Math.round(data.current_weather.temperature);
+                        console.log(`Temp:`, weatherResponseTemp);
+                        const weatherResponseWindSpeed = Math.round(data.current_weather.windspeed);
+                        console.log(`Wind Speed:`, weatherResponseWindSpeed);
+                        const weatherResponseWindDirection = data.current_weather.winddirection;
+                        console.log(`Wind Direction:`, weatherResponseWindDirection);
+                        const weatherResponseCode = data.current_weather.weathercode;
+                        console.log(`Weather Code:`, weatherResponseCode);
+                        weatherOutputTemp.innerHTML = `Temp: <span>${weatherResponseTemp}</span>`;
+                        // weatherOutputWindSpeed.innerHTML = `Wind Speed: ${weatherResponseWindSpeed}`;
+                        //Populate the hidden inputs for database weather
+                        weatherOutputTempDb.innerHTML = `Temperature: ${weatherResponseTemp}`;
+                        weatherOutputWindSpeedDb.innerHTML = `Wind Speed: ${weatherResponseWindSpeed}`;
+                        windDirectionCalc(weatherResponseWindDirection);
+                        //wind direction calculation
+                        function windDirectionCalc(dir) {
+                            let windDirectionOutput = '';
+                        if (dir >= 346 && dir <= 360 || dir >= 0 && dir <= 15) {
+                            windDirectionOutput = 'N';
+                        } else if (dir >= 16 && dir <= 45) {
+                            windDirectionOutput = 'NNE';
+                        } else if (dir >= 46 && dir <= 75) {
+                            windDirectionOutput = 'ENE';
+                        } else if (dir >= 76 && dir <= 105) {
+                            windDirectionOutput = 'E';
+                        } else if (dir >= 106 && dir <= 135) {
+                            windDirectionOutput = 'ESE';
+                        } else if (dir >= 136 && dir <= 165) {
+                            windDirectionOutput = 'SSE';
+                        } else if (dir >= 166 && dir <= 195) {
+                            windDirectionOutput = 'S';
+                        } else if (dir >= 196 && dir <= 225) {
+                            windDirectionOutput = 'SSW';
+                        } else if (dir >= 226 && dir <= 255) {
+                            windDirectionOutput = 'WSW';
+                        } else if (dir >= 256 && dir <= 285) {
+                            windDirectionOutput = 'W';
+                        } else if (dir >= 286 && dir <= 315) {
+                            windDirectionOutput = 'WNW';
+                        } else if (dir >= 316 && dir <= 345) {
+                            windDirectionOutput = 'NNW';
+                        }
+                        console.log(windDirectionOutput);
+                        weatherOutputWindDirectionDb.value = `${windDirectionOutput}`;
+                        weatherOutputWindSpeedDb.value = `${weatherResponseWindSpeed} mph`;
+                        weatherOutputTempDb.value = `${weatherResponseTemp}`;
+                        return weatherOutputWindDirection.innerHTML = `Wind: <span>${windDirectionOutput}</span> at <span>${weatherResponseWindSpeed} mph</span>`;
+                        };
+      })
+            },
+            function (error) {
+                console.log("The Locator was denied. :(");
+            })
+        })();
+    }
+    if(document.getElementById('auto-weather').checked===false) {
+        document.getElementById('auto-weather-reveal').hidden = true;
+        document.getElementById('default-weather').hidden = false;
+    }
+});
+
+
+
+//Highlight if an input has a value
+
+// let labelHighlight = document.getElementById('event-label');
+
+// document.querySelector('#event').addEventListener("change", () => {
+    
+//     if (document.querySelector('#event').value !== '') {
+//         console.log('event value not blank');
+//         labelHighlight.style.backgroundColor='green';
+//     }
+// })
+
